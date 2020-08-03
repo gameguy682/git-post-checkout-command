@@ -2,8 +2,11 @@
 
 All notable changes to the "Git Post Checkout Command" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
 ## [Unreleased]
 
+## [0.1.0] - 2020-08-03
+
 - Initial release
+
+[Unreleased]: https://github.com/gameguy682/git-post-checkout-command/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/gameguy682/git-post-checkout-command/releases/tag/v0.1.0
