@@ -1,65 +1,33 @@
-# git-post-checkout-command README
+# Git Post Checkout Command
 
-This is the README for your extension "Git Post Checkout Command". After writing up a brief description, we recommend including the following sections.
+This VS Code Extension will allow you to run a terminal command following a Git Branch change.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Automatically trigger terminal commands when switching branches. Good if you don't know how to set up a git hook or need a interactive terminal when switching branches.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+* git (This extension will only work for git projects)
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* `git-post-checkout-command.command`: Command to run. Leaving it empty will disable any action from running. Default: null
+* `git-post-checkout-command.showTerminal`: Show the terminal when running or leave it in the background. Enable if you need input inside of the newly created terminal. Default: false
+* `git-post-checkout-command.terminateTerminal`: Terminate the new terminal after the command has run. Default: true
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+Please see the `CHANGELOG.md` file for the list of changes
 
-### 1.0.0
+## FAQ
 
-Initial release of ...
+### Why not just use a git post-checkout hook?
 
-### 1.0.1
+Visual Studio Code doesn't seem to like interactive git hooks. Therefore, this extension was created to run a separate terminal to allow user input when changing a branch.
 
-Fixed issue #.
+### Will this run if I change branches outside of VS Code?
 
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Not right away. It should trigger once you go back into VS Code and recognizes a branch was changed.

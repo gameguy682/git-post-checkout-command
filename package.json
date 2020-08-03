@@ -26,7 +26,7 @@
 						"null"
 					],
 					"default": null,
-					"description": "The terminal command you wish to run after switching branches."
+					"description": "The terminal command you wish to run after switching branches. Leaving it empty will prevent a new terminal from running."
 				},
 				"git-post-checkout-command.showTerminal": {
 					"type": "boolean",
