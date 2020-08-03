@@ -13,15 +13,18 @@
 		"*"
 	],
 	"extensionDependencies": [
-        "vscode.git"
-    ],
+		"vscode.git"
+	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"configuration": {
 			"title": "Git Post Checkout Command",
 			"properties": {
 				"git-post-checkout-command.command": {
-					"type": ["string", "null"],
+					"type": [
+						"string",
+						"null"
+					],
 					"default": null,
 					"description": "The terminal command you wish to run after switching branches."
 				},
