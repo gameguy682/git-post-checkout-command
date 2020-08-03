@@ -4,6 +4,7 @@
 	"description": "Allow you to run a terminal command following a Git Branch change.",
 	"version": "0.1.0",
 	"author": "Sean Brace",
+	"publisher": "sean-brace",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
