@@ -8,10 +8,8 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/gameguy682/git-post-checkout-command.git"
+		"url": "https://github.com/gameguy682/git-post-checkout-command"
 	  },
-	  
-	  
 	  "bugs": {
 		"url": "https://github.com/gameguy682/git-post-checkout-command/issues"
 	  },
