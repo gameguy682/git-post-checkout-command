@@ -2,26 +2,26 @@
 	"name": "git-post-checkout-command",
 	"displayName": "Git Post Checkout Command",
 	"description": "Allow you to run a terminal command following a Git Branch change.",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": "Sean Brace",
 	"publisher": "sean-brace",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/gameguy682/git-post-checkout-command"
-	  },
-	  "bugs": {
+	},
+	"bugs": {
 		"url": "https://github.com/gameguy682/git-post-checkout-command/issues"
-	  },
-	  "homepage": "https://github.com/gameguy682/git-post-checkout-command#readme",
-	  "keywords": [
+	},
+	"homepage": "https://github.com/gameguy682/git-post-checkout-command#readme",
+	"keywords": [
 		"Git",
 		"Checkout",
 		"Hook",
 		"post-checkout",
 		"Extension",
 		"VSCode"
-	  ],
+	],
 	"engines": {
 		"vscode": "^1.47.0"
 	},
