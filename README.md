@@ -1,6 +1,6 @@
-# gitcheckoutcommand README
+# git-post-checkout-command README
 
-This is the README for your extension "gitcheckoutcommand". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "Git Post Checkout Command". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 

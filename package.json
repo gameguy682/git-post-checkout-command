@@ -1,6 +1,6 @@
 {
-	"name": "gitcheckoutcommand",
-	"displayName": "GitCheckoutCommand",
+	"name": "git-post-checkout-command",
+	"displayName": "Git Post Checkout Command",
 	"description": "",
 	"version": "0.0.1",
 	"engines": {
@@ -17,10 +17,31 @@
     ],
 	"main": "./out/extension.js",
 	"contributes": {
+		"configuration": {
+			"title": "Git Post Checkout Command",
+			"properties": {
+				"git-post-checkout-command.command": {
+					"type": ["string", "null"],
+					"default": null,
+					"description": "The terminal command you wish to run after switching branches."
+				},
+				"git-post-checkout-command.showTerminal": {
+					"type": "boolean",
+					"default": false,
+					"description": "Shows the terminal when running the script. Note: Running an external script may open a separate terminal."
+				},
+				"git-post-checkout-command.terminateTerminal": {
+					"type": "boolean",
+					"default": true,
+					"description": "Disposes of the terminal after the command(s) have finishes running."
+				}
+			}
+		},
 		"commands": [
 			{
-				"command": "gitcheckoutcommand.helloWorld",
-				"title": "Hello World"
+				"command": "git-post-checkout-command.triggerCommand",
+				"title": "Trigger Post Checkout Command",
+				"category": "Git Post Checkout Command"
 			}
 		]
 	},

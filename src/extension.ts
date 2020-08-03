@@ -2,7 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import { GitExtension, API } from './git';
-import { isNullOrUndefined } from 'util';
+import { isNullOrUndefined, isRegExp } from 'util';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -11,9 +11,44 @@ export async function activate(context: vscode.ExtensionContext) {
     let gitApi: API;
     let oldBranch: String|undefined;
 
-    let command = '../test.sh';
-
     let TERM_COUNT = 1;
+
+    const config = vscode.workspace.getConfiguration("git-post-checkout-command", undefined);
+
+    let command = config.get('command') as string;
+    let showTerminal = config.get('showTerminal') as boolean;
+    let terminateTerminal = config.get('terminateTerminal') as boolean;
+
+    //TODO: Trigger Manually
+    const disposable = vscode.commands.registerCommand('git-post-checkout-command.triggerCommand', () => {
+        //This will be moved into a single codebase, for now its for testing
+        try {
+            const terminal = vscode.window.createTerminal({
+                name: `#${TERM_COUNT++} Command Test`,
+                hideFromUser: !showTerminal
+            });
+
+            if(showTerminal) {
+                terminal.show();
+            }
+            
+            terminal.sendText(`${command}`);
+
+            if(terminateTerminal) {
+                //Remove the terminal after 5 seconds
+                setTimeout(function() {
+                    terminal.dispose();
+                }, 5000); 
+            }
+        } catch(e) {
+            vscode.window.showWarningMessage(
+                'There was an issue with sending the command. Please double check the command.'
+            );
+            return;
+        }
+	});
+
+	context.subscriptions.push(disposable);
 
     try {
         const git = vscode.extensions.getExtension<GitExtension>('vscode.git');
@@ -42,12 +77,22 @@ export async function activate(context: vscode.ExtensionContext) {
                     if(oldBranch !== newBranch) {
                         try {
                             const terminal = vscode.window.createTerminal({
-                                name: `#${TERM_COUNT++} Command Test`
-                                //hideFromUser: false,
+                                name: `#${TERM_COUNT++} Command Test`,
+                                hideFromUser: !showTerminal
                             });
+
+                            if(showTerminal) {
+                                terminal.show();
+                            }
                             
                             terminal.sendText(`${command}`);
-                            terminal.dispose();
+
+                            if(terminateTerminal) {
+                                //Remove the terminal after 5 seconds
+                                setTimeout(function() {
+                                    terminal.dispose();
+                                }, 5000); 
+                            }
                         } catch(e) {
                             vscode.window.showWarningMessage(
                                 'There was an issue with sending the command. Please double check the command.'
