@@ -31,3 +31,9 @@ Visual Studio Code doesn't seem to like interactive git hooks. Therefore, this e
 ### Will this run if I change branches outside of VS Code?
 
 Not right away. It should trigger once you go back into VS Code and recognizes a branch was changed.
+
+## Contributors
+
+Special Thanks to everybody who contributed to this project and for some reason isn't on the Contributor's list. I'll try to add names who are MIA below
+
+* [spencerwmiles](https://github.com/spencerwmiles)

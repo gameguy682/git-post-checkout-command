@@ -2,7 +2,7 @@
 	"name": "git-post-checkout-command",
 	"displayName": "Git Post Checkout Command",
 	"description": "Allow you to run a terminal command following a Git Branch change.",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"author": "Sean Brace",
 	"publisher": "sean-brace",
 	"license": "MIT",

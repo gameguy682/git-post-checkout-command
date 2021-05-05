@@ -4,6 +4,10 @@ All notable changes to the "Git Post Checkout Command" extension will be documen
 
 ## [Unreleased]
 
+## [0.2.0] - 2021-05-05
+
+- removed unused functions and updated terminateTerminal to send exit
+
 ## [0.1.1] - 2020-08-03
 
 - Fixed issues with some files that I didn't notice until launch
