@@ -23,19 +23,9 @@ export default class CommandTerminal {
             this.terminal.sendText(`${this.settings.command}`);
 
             if(this.settings.terminateTerminal) {
-                this.dispose();
+                this.terminal.sendText(`exit;`);
             }
         }
-    }
-
-    public dispose(timeout: number = 5000) {
-        setTimeout(() => {
-            this.getTerminal().dispose();
-        }, timeout);
-    }
-
-    public getTerminal() {
-        return this.terminal;
     }
 }
 
