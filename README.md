@@ -34,6 +34,5 @@ Not right away. It should trigger once you go back into VS Code and recognizes a
 
 ## Contributors
 
-Special Thanks to everybody who contributed to this project and for some reason isn't on the Contributor's list. I'll try to add names who are MIA below
-
+* [gameguy682](https://github.com/gameguy682)
 * [spencerwmiles](https://github.com/spencerwmiles)
